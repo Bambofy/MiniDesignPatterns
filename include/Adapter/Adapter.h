@@ -14,31 +14,8 @@
 
 #pragma once
 
-/*
- this is the interface to the outside world.
- */
-class Target
-{
-public:
-    virtual ~Target()
-    {
-        
-    }
-    virtual void Request() = 0; // example method.
-};
-
-/*
- This is the existing class that needs adapting.
- */
-class Adaptee
-{
-public:
-    virtual ~Adaptee()
-    {
-        
-    }
-    virtual void SpecificRequest() = 0; // example method.
-};
+#include "Target.h"
+#include "Adaptee.h"
 
 class Adapter : public Target
 {

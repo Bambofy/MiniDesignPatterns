@@ -14,25 +14,15 @@
 
 #pragma once
 
-#include "Singleton/Singleton.h"
-
-#include "FactoryMethod/FactoryMethod.h"
-
-#include "Bridge/Abstraction.h"
-#include "Bridge/Implementor.h"
-
-#include "Observer/Observer.h"
-#include "Observer/Subject.h"
-
-#include "Adapter/Adapter.h"
-
-#include "Decorator/DComponent.h"
-#include "Decorator/Decorator.h"
-
-#include "Composite/Component.h"
-#include "Composite/Composite.h"
-#include "Composite/Leaf.h"
-
-#include "Adapter/Adaptee.h"
-#include "Adapter/Adapter.h"
-#include "Adapter/Target.h"
+/*
+ This is the existing class that needs adapting.
+ */
+class Adaptee
+{
+public:
+    virtual ~Adaptee()
+    {
+        
+    }
+    virtual void SpecificRequest() = 0; // example method.
+};
