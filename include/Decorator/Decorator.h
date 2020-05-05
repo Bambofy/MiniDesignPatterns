@@ -19,7 +19,7 @@
 #include "DComponent.h"
 
 
-class Decorator : DComponent
+class Decorator : public DComponent
 {
 public:
     virtual ~Decorator()
