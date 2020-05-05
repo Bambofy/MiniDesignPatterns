@@ -28,3 +28,7 @@
 
 #include "Decorator/DComponent.h"
 #include "Decorator/Decorator.h"
+
+#include "Composite/Component.h"
+#include "Composite/Composite.h"
+#include "Composite/Leaf.h"

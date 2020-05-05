@@ -37,4 +37,4 @@ private:
     }
     
     std::map<int, Component*> children;
-}
+};
