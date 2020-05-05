@@ -33,6 +33,10 @@ public:
     {
         this->implementors.erase(index);
     }
+    void GetImplementor(int index)
+    {
+        return this->implementors[index];
+    }
 private:
     std::map<int, Implementor*> implementors;
 };
