@@ -25,16 +25,23 @@ public:
     {
         
     }
-private:
-    void AddChildComponent(int index, Component * component)
+    
+    void AddComponent(int index, Component * component)
     {
-        children[index] = component;
+        this->children[index] = component;
     }
     
-    void RemoveChildComponent(int index)
+    void RemoveComponent(int index)
     {
-        children[index] = nullptr;
+        this->children[index] = nullptr;
     }
+    
+    Component* GetComponent(int index)
+    {
+        return this->children[index];
+    }
+    
+private:
     
     std::map<int, Component*> children;
 };
