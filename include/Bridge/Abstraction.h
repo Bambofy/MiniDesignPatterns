@@ -33,7 +33,7 @@ public:
     {
         this->implementors.erase(index);
     }
-    void GetImplementor(int index)
+    Implementor* GetImplementor(int index)
     {
         return this->implementors[index];
     }
