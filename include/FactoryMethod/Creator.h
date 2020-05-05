@@ -14,10 +14,10 @@
 #pragma once
 
 template <class T_PRODUCT>
-class AbstractFactory
+class Creator
 {
 public:
-    virtual ~AbstractFactory()
+    virtual ~Creator()
     {
         
     }
