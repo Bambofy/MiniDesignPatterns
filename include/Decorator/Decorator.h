@@ -29,4 +29,4 @@ public:
     }
 private:
     std::map<int, DComponent*> components;
-}
+};
