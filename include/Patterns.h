@@ -16,7 +16,7 @@
 
 #include "Singleton/Singleton.h"
 
-#include "AbstractFactory/AbstractFactory.h"
+#include "FactoryMethod/FactoryMethod.h"
 
 #include "Bridge/Abstraction.h"
 #include "Bridge/Implementor.h"
