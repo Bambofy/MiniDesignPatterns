@@ -25,3 +25,6 @@
 #include "Observer/Subject.h"
 
 #include "Adapter/Adapter.h"
+
+#include "Decorator/DComponent.h"
+#include "Decorator/Decorator.h"
