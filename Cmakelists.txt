@@ -1,0 +1,21 @@
+cmake_minimum_required(VERSION 3.0.0)
+
+project (MiniDesignPatterns)
+
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_BUILD_TYPE Debug)
+
+file(GLOB_RECURSE ALL_SRCS
+        "${CMAKE_CURRENT_SOURCE_DIR}/source/*.cpp"
+        )
+file(GLOB_RECURSE ALL_HEADERS
+        "${CMAKE_CURRENT_SOURCE_DIR}/include/*.h"
+        )
+
+source_group(TREE "${CMAKE_CURRENT_SOURCE_DIR}" FILES ${ALL_SRCS})
+source_group(TREE "${CMAKE_CURRENT_SOURCE_DIR}" FILES ${ALL_HEADERS})
+
+add_executable(MiniDesignPatterns ${ALL_HEADERS} ${ALL_SRCS})
+
+target_include_directories(MiniDesignPatterns PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
