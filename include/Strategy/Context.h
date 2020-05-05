@@ -14,28 +14,34 @@
 
 #pragma once
 
-#include "Singleton/Singleton.h"
+#include <map>
 
-#include "FactoryMethod/FactoryMethod.h"
+#include "Strategy.h"
 
-#include "Bridge/Abstraction.h"
-#include "Bridge/Implementor.h"
 
-#include "Observer/Observer.h"
-#include "Observer/Subject.h"
-
-#include "Adapter/Adapter.h"
-
-#include "Decorator/DComponent.h"
-#include "Decorator/Decorator.h"
-
-#include "Composite/Component.h"
-#include "Composite/Composite.h"
-#include "Composite/Leaf.h"
-
-#include "Adapter/Adaptee.h"
-#include "Adapter/Adapter.h"
-#include "Adapter/Target.h"
-
-#include "Strategy/Context.h"
-#include "Strategy/Strategy.h"
+class Context
+{
+public:
+    virtual ~Context()
+    {
+        
+    }
+    
+    void AddStrategy(int index, Strategy * strategy)
+    {
+        this->strategies[index];
+    }
+    
+    Strategy * GetStrategy(int index)
+    {
+        return this->strategies[index];
+    }
+    
+    void RemoveStrategy(int index)
+    {
+        this->strategies[index] = nullptr;
+    }
+    
+private:
+    std::map<int, Strategy*> strategies;
+};
