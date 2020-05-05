@@ -32,7 +32,7 @@ public:
         components[index] = component;
     }
     
-    void GetDecoratedComponent(int index)
+    DComponent* GetDecoratedComponent(int index)
     {
         return components[index];
     }
