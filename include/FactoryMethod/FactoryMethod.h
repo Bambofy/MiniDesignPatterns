@@ -17,7 +17,11 @@ template <class T_PRODUCT>
 class AbstractFactory
 {
 public:
-    virtual ~AbstractFactory();
-    virtual T_PRODUCT * CreateProduct();
+    virtual ~AbstractFactory()
+    {
+        
+    }
+    
+    virtual T_PRODUCT * CreateProduct() = 0;
 private:
 };

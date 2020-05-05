@@ -22,7 +22,10 @@ template <class T_OBSERVER>
 class Subject
 {
 public:
-    virtual ~Subject();
+    virtual ~Subject()
+    {
+        
+    }
     
     void Attach(int index, Observer<T_OBSERVER> * observer)
     {

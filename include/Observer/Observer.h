@@ -18,6 +18,10 @@ template <class T_SUBJECT>
 class Observer
 {
 public:
-    virtual ~Observer();
+    virtual ~Observer()
+    {
+        
+    }
+    
     virtual void Update(T_SUBJECT * subject) = 0;
 };

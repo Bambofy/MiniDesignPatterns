@@ -17,6 +17,9 @@
 class Implementor
 {
 public:
-    virtual ~Implementor();
+    virtual ~Implementor()
+    {
+        
+    }
 private:
 };

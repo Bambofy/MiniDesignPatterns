@@ -17,5 +17,8 @@
 class DComponent
 {
 public:
-    virtual ~DComponent();
+    virtual ~DComponent()
+    {
+        
+    }
 };

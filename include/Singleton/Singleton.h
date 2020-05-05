@@ -17,6 +17,11 @@ template <class T>
 class Singleton
 {
 public:
+    virtual ~Singleton()
+    {
+        
+    }
+    
     static T * GetInstance()
     {
         static T instance;

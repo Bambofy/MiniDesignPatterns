@@ -22,7 +22,11 @@
 class Decorator : DComponent
 {
 public:
-    virtual ~Decorator();
+    virtual ~Decorator()
+    {
+        
+    }
+    
     void DecorateComponent(int index, DComponent * component)
     {
         components[index] = component;

@@ -20,7 +20,10 @@
 class Abstraction
 {
 public:
-    virtual ~Abstraction();
+    virtual ~Abstraction()
+    {
+        
+    }
     
     void AddImplementor(int index, Implementor * impl)
     {

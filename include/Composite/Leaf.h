@@ -19,5 +19,8 @@
 class Leaf : public Component
 {
 public:
-    virtual ~Leaf();
+    virtual ~Leaf()
+    {
+        
+    }
 };

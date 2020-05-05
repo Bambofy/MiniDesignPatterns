@@ -20,7 +20,10 @@
 class Target
 {
 public:
-    virtual ~Target();
+    virtual ~Target()
+    {
+        
+    }
     virtual void Request() = 0; // example method.
 };
 
@@ -30,14 +33,20 @@ public:
 class Adaptee
 {
 public:
-    virtual ~Adaptee();
+    virtual ~Adaptee()
+    {
+        
+    }
     virtual void SpecificRequest() = 0; // example method.
 };
 
 class Adapter : public Target
 {
 public:
-    virtual ~Adapter();
+    virtual ~Adapter()
+    {
+        
+    }
     virtual void Request()
     {
         adaptee->SpecificRequest();

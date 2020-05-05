@@ -21,7 +21,10 @@
 class Composite : public Component
 {
 public:
-    virtual ~Composite();
+    virtual ~Composite()
+    {
+        
+    }
 private:
     void AddChildComponent(int index, Component * component)
     {
