@@ -27,10 +27,16 @@ public:
         
     }
     
-    void DecorateComponent(int index, DComponent * component)
+    void Decorate(int index, DComponent * component)
     {
         components[index] = component;
     }
+    
+    void GetDecoratedComponent(int index)
+    {
+        return components[index];
+    }
+
 private:
     std::map<int, DComponent*> components;
 };
