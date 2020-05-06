@@ -42,7 +42,10 @@ public:
     {
         for (auto& entry : observers)
         {
-            entry.second->Update(this);
+            if (entry.second != nullptr)
+            {
+                entry.second->Update(this);
+            }
         }
     }
 private:

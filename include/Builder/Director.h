@@ -46,7 +46,10 @@ public:
     {
         for (auto& entry : builders)
         {
-            entry.second->BuildPart();
+            if (entry.second != nullptr)
+            {
+                entry.second->BuildPart();
+            }
         }
     }
     

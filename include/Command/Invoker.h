@@ -33,7 +33,10 @@ public:
     {
         for (auto& entry : commands)
         {
-            entry.second->Execute();
+            if (entry.second != nullptr)
+            {
+                entry.second->Execute();
+            }
         }
     }
     
