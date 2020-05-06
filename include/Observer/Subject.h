@@ -18,7 +18,7 @@
 
 #include "Observer.h"
 
-template <class T_OBSERVER>
+
 class Subject
 {
 public:
@@ -27,7 +27,7 @@ public:
         
     }
     
-    void Attach(int index, Observer<T_OBSERVER> * observer)
+    void Attach(int index, Observer * observer)
     {
         observers[index] = observer;
     }
@@ -45,5 +45,6 @@ public:
         }
     }
 private:
-    std::map<int, Observer<T_OBSERVER>*> observers;
+    std::map<int, Observer*> observers;
 };
+

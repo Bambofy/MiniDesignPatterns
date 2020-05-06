@@ -28,6 +28,11 @@ public:
     }
     virtual ~Command() {}
     virtual void Execute() = 0;
+protected:
+    Receiver * GetReceiver()
+    {
+        return this->receiver;
+    }
 private:
     Receiver * receiver = nullptr;
 };

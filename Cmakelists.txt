@@ -16,8 +16,8 @@ file(GLOB_RECURSE ALL_HEADERS
 source_group(TREE "${CMAKE_CURRENT_SOURCE_DIR}" FILES ${ALL_SRCS})
 source_group(TREE "${CMAKE_CURRENT_SOURCE_DIR}" FILES ${ALL_HEADERS})
 
-add_library(MiniDesignPatterns SHARED ${ALL_HEADERS} ${ALL_SRCS})
+#add_library(MiniDesignPatterns SHARED ${ALL_HEADERS} ${ALL_SRCS})
 
-#add_executable(MiniDesignPatterns ${ALL_HEADERS} ${ALL_SRCS})
+add_executable(MiniDesignPatterns ${ALL_HEADERS} ${ALL_SRCS})
 
 target_include_directories(MiniDesignPatterns PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)

@@ -46,6 +46,11 @@ public:
     {
         commands[index] = nullptr;
     }
+    
+    Command * GetCommand(int index)
+    {
+        return commands[index];
+    }
 private:
     std::map<int, Command*> commands;
 };

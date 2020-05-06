@@ -14,14 +14,11 @@
 
 #pragma once
 
-template <class T_SUBJECT>
+class Subject;
+
 class Observer
 {
 public:
-    virtual ~Observer()
-    {
-        
-    }
-    
-    virtual void Update(T_SUBJECT * subject) = 0;
+    virtual ~Observer();
+    virtual void Update(Subject * subject) = 0;
 };
