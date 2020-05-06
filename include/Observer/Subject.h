@@ -15,6 +15,7 @@
 #pragma once
 
 #include <map>
+#include <string>
 
 #include "Observer.h"
 
@@ -27,14 +28,14 @@ public:
         
     }
     
-    void Attach(int index, Observer * observer)
+    void Attach(std::string id, Observer * observer)
     {
-        observers[index] = observer;
+        observers[id] = observer;
     }
     
-    void Detatch(int index)
+    void Detatch(std::string id)
     {
-        observers[index] = nullptr;
+        observers[id] = nullptr;
     }
     
     void Notify()
@@ -45,6 +46,6 @@ public:
         }
     }
 private:
-    std::map<int, Observer*> observers;
+    std::map<std::string, Observer*> observers;
 };
 

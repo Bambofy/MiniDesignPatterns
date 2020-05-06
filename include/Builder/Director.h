@@ -15,6 +15,7 @@
 #pragma once
 
 #include <map>
+#include <string>
 
 #include "Builder.h"
 
@@ -26,19 +27,19 @@ public:
         
     }
     
-    void AddBuilder(int index, Builder* builder)
+    void AddBuilder(std::string id, Builder* builder)
     {
-        builders[index] = builder;
+        builders[id] = builder;
     }
     
-    void RemoveBuilder(int index)
+    void RemoveBuilder(std::string id)
     {
-        builders[index] = nullptr;
+        builders[id] = nullptr;
     }
     
-    Builder* GetBuilder(int index)
+    Builder* GetBuilder(std::string id)
     {
-        return this->builders[index];
+        return this->builders[id];
     }
     
     void Construct()
@@ -50,5 +51,5 @@ public:
     }
     
 private:
-    std::map<int, Builder*> builders;
+    std::map<std::string, Builder*> builders;
 };

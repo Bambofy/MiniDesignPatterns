@@ -15,6 +15,7 @@
 #pragma once
 
 #include <map>
+#include <string>
 
 #include "Strategy.h"
 
@@ -27,21 +28,21 @@ public:
         
     }
     
-    void AddStrategy(int index, Strategy * strategy)
+    void AddStrategy(std::string id, Strategy * strategy)
     {
-        this->strategies[index];
+        this->strategies[id];
     }
     
-    Strategy * GetStrategy(int index)
+    Strategy * GetStrategy(std::string id)
     {
-        return this->strategies[index];
+        return this->strategies[id];
     }
     
-    void RemoveStrategy(int index)
+    void RemoveStrategy(std::string id)
     {
-        this->strategies[index] = nullptr;
+        this->strategies[id] = nullptr;
     }
     
 private:
-    std::map<int, Strategy*> strategies;
+    std::map<std::string, Strategy*> strategies;
 };

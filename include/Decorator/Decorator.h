@@ -15,6 +15,7 @@
 #pragma once
 
 #include <map>
+#include <string>
 
 #include "DComponent.h"
 
@@ -27,16 +28,16 @@ public:
         
     }
     
-    void Decorate(int index, DComponent * component)
+    void Decorate(std::string id, DComponent * component)
     {
-        components[index] = component;
+        components[id] = component;
     }
     
-    DComponent* GetDecoratedComponent(int index)
+    DComponent* GetDecoratedComponent(std::string id)
     {
-        return components[index];
+        return components[id];
     }
 
 private:
-    std::map<int, DComponent*> components;
+    std::map<std::string, DComponent*> components;
 };

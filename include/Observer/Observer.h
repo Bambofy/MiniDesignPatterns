@@ -19,6 +19,6 @@ class Subject;
 class Observer
 {
 public:
-    virtual ~Observer();
+    virtual ~Observer() {};
     virtual void Update(Subject * subject) = 0;
 };

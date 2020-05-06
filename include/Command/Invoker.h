@@ -24,9 +24,9 @@ class Invoker
 public:
     virtual ~Invoker() {}
     
-    void InvokeCommand(int index)
+    void InvokeCommand(std::string id)
     {
-        commands[index]->Execute();
+        commands[id]->Execute();
     }
     
     void InvokeAllCommands()
@@ -37,20 +37,20 @@ public:
         }
     }
     
-    void StoreCommand(int index, Command* command)
+    void StoreCommand(std::string id, Command* command)
     {
-        commands[index] = command;
+        commands[id] = command;
     }
     
-    void RemoveCommand(int index)
+    void RemoveCommand(std::string id)
     {
-        commands[index] = nullptr;
+        commands[id] = nullptr;
     }
     
-    Command * GetCommand(int index)
+    Command * GetCommand(std::string id)
     {
-        return commands[index];
+        return commands[id];
     }
 private:
-    std::map<int, Command*> commands;
+    std::map<std::string, Command*> commands;
 };

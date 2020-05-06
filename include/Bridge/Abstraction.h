@@ -14,6 +14,7 @@
 #pragma once
 
 #include <map>
+#include <string>
 
 #include "Implementor.h"
 
@@ -25,18 +26,20 @@ public:
         
     }
     
-    void AddImplementor(int index, Implementor * impl)
+    void AddImplementor(std::string id, Implementor * impl)
     {
-        this->implementors[index] = impl;
+        this->implementors[id] = impl;
     }
-    void RemoveImplementor(int index)
+    
+    void RemoveImplementor(std::string id)
     {
-        this->implementors.erase(index);
+        this->implementors[id] = nullptr;
     }
-    Implementor* GetImplementor(int index)
+    
+    Implementor* GetImplementor(std::string id)
     {
-        return this->implementors[index];
+        return this->implementors[id];
     }
 private:
-    std::map<int, Implementor*> implementors;
+    std::map<std::string, Implementor*> implementors;
 };

@@ -15,7 +15,7 @@
 #pragma once
 
 #include <map>
-
+#include <string>
 #include "Component.h"
 
 class Composite : public Component
@@ -26,22 +26,22 @@ public:
         
     }
     
-    void AddComponent(int index, Component * component)
+    void AddComponent(std::string id, Component * component)
     {
-        this->children[index] = component;
+        this->children[id] = component;
     }
     
-    void RemoveComponent(int index)
+    void RemoveComponent(std::string id)
     {
-        this->children[index] = nullptr;
+        this->children[id] = nullptr;
     }
     
-    Component* GetComponent(int index)
+    Component* GetComponent(std::string id)
     {
-        return this->children[index];
+        return this->children[id];
     }
     
 private:
     
-    std::map<int, Component*> children;
+    std::map<std::string, Component*> children;
 };
