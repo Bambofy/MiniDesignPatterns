@@ -14,37 +14,38 @@
 
 #pragma once
 
-#include "Singleton/Singleton.h"
+#include <map>
 
-#include "FactoryMethod/Creator.h"
+#include "Command.h"
 
-#include "Bridge/Abstraction.h"
-#include "Bridge/Implementor.h"
-
-#include "Observer/Observer.h"
-#include "Observer/Subject.h"
-
-#include "Adapter/Adapter.h"
-
-#include "Decorator/DComponent.h"
-#include "Decorator/Decorator.h"
-
-#include "Composite/Component.h"
-#include "Composite/Composite.h"
-#include "Composite/Leaf.h"
-
-#include "Adapter/Adaptee.h"
-#include "Adapter/Adapter.h"
-#include "Adapter/Target.h"
-
-#include "Strategy/Context.h"
-#include "Strategy/Strategy.h"
-
-#include "AbstractFactory/AbstractFactory.h"
-
-#include "Builder/Builder.h"
-#include "Builder/Director.h"
-
-#include "Command/Command.h"
-#include "Command/Invoker.h"
-#include "Command/Receiver.h"
+// contains and executes commands
+class Invoker
+{
+public:
+    virtual ~Invoker() {}
+    
+    void InvokeCommand(int index)
+    {
+        commands[index]->Execute();
+    }
+    
+    void InvokeAllCommands()
+    {
+        for (auto& entry : commands)
+        {
+            entry.second->Execute();
+        }
+    }
+    
+    void StoreCommand(int index, Command* command)
+    {
+        commands[index] = command;
+    }
+    
+    void RemoveCommand(int index)
+    {
+        commands[index] = nullptr;
+    }
+private:
+    std::map<int, Command*> commands;
+};
