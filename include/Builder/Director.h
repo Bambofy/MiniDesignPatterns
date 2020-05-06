@@ -40,6 +40,15 @@ public:
     {
         return this->builders[index];
     }
+    
+    void Construct()
+    {
+        for (auto& entry : builders)
+        {
+            entry.second->BuildPart();
+        }
+    }
+    
 private:
     std::map<int, Builder*> builders;
 };

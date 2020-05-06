@@ -21,4 +21,6 @@ public:
     {
         
     }
+    
+    virtual void BuildPart() = 0;
 };
