@@ -48,7 +48,18 @@ public:
     
     void RemoveComponent(std::string id)
     {
-        this->children[id].reset();
+        auto iter = this->children.find(id);
+        if (iter == this->children.end())
+        {
+            // component with id doesn't exist
+        }
+        else
+        {
+            // component with id does exist.
+            // delete the component
+            iter->second.reset();
+            this->children.erase(iter);
+        }
     }
     
     std::unique_ptr<Component> * GetComponent(std::string id)
