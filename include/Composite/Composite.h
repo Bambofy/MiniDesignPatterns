@@ -16,6 +16,8 @@
 
 #include <map>
 #include <string>
+#include <memory>
+
 #include "Component.h"
 
 class Composite : public Component
@@ -28,20 +30,33 @@ public:
     
     void AddComponent(std::string id, Component * component)
     {
-        this->children[id] = component;
+        auto iter = this->children.find(id);
+        if (iter == this->children.end())
+        {
+            // component with id doesn't exist
+        }
+        else
+        {
+            // component with id does exist.
+            // replace the component
+            iter->second.reset();
+            this->children.erase(iter);
+        }
+        
+        this->children[id] = std::unique_ptr<Component>(component);
     }
     
     void RemoveComponent(std::string id)
     {
-        this->children[id] = nullptr;
+        this->children[id].reset();
     }
     
-    Component* GetComponent(std::string id)
+    std::unique_ptr<Component> * GetComponent(std::string id)
     {
-        return this->children[id];
+        return &(this->children[id]);
     }
     
 private:
     
-    std::map<std::string, Component*> children;
+    std::map<std::string, std::unique_ptr<Component>> children;
 };

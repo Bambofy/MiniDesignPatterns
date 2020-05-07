@@ -15,6 +15,7 @@
 
 #include <map>
 #include <string>
+#include <memory>
 
 #include "Implementor.h"
 
@@ -28,18 +29,19 @@ public:
     
     void AddImplementor(std::string id, Implementor * impl)
     {
-        this->implementors[id] = impl;
+        this->implementors[id] = std::unique_ptr<Implementor>(impl);
     }
     
     void RemoveImplementor(std::string id)
     {
-        this->implementors[id] = nullptr;
+        this->implementors[id].reset();
+        this->implementors.erase(id);
     }
     
-    Implementor* GetImplementor(std::string id)
+    Implementor * GetImplementor(std::string id)
     {
-        return this->implementors[id];
+        return this->implementors[id].get();
     }
 private:
-    std::map<std::string, Implementor*> implementors;
+    std::map<std::string, std::unique_ptr<Implementor>> implementors;
 };

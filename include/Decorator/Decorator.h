@@ -16,6 +16,7 @@
 
 #include <map>
 #include <string>
+#include <memory>
 
 #include "DComponent.h"
 
@@ -23,21 +24,20 @@
 class Decorator : public DComponent
 {
 public:
+    Decorator(DComponent * targetComponent)
+    {
+        _target = std::unique_ptr<DComponent>(targetComponent);
+    }
+    
     virtual ~Decorator()
     {
         
     }
     
-    void Decorate(std::string id, DComponent * component)
+    std::unique_ptr<DComponent> * GetDecoratedComponent()
     {
-        components[id] = component;
+        return &_target;
     }
-    
-    DComponent* GetDecoratedComponent(std::string id)
-    {
-        return components[id];
-    }
-
 private:
-    std::map<std::string, DComponent*> components;
+    std::unique_ptr<DComponent> _target;
 };
